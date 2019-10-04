@@ -1,0 +1,100 @@
+/* Style the video: 100% width and height to cover the entire window */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #333;
+    overflow-x: hidden;
+    background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+}
+
+.video-header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+}
+
+.wrap {
+    max-width: 960px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: auto;
+    text-align: center;
+}
+
+.fullscreen-video-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+}
+
+    .fullscreen-video-wrap video {
+        min-height: 100%;
+        min-width: 100%;
+        background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+    }
+
+.header-overlay {
+    height: 200vh;
+    width: 210vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+    opacity: 0.50;
+}
+
+.header-content {
+    z-index: 2;
+    margin-top: 20%;
+    padding: 0 5rem;
+}
+
+    .header-content h1 {
+        margin-top: 0;
+        font-weight: 100;
+        font-size: 10vw;
+        font-variation-settings: 'wght' 100, 'wdth' 85;
+        animation: breathe 4000ms infinite forwards;
+    }
+
+@keyframes breathe {
+    60% {
+        font-variation-settings: 'wght' 700, 'wdth' 100;
+    }
+
+    100% {
+        font-variation-settings: 'wght' 100, 'wdth' 85;
+    }
+}
+
+.header-content h3 {
+    font-size: 1.5 rem;
+    display: block;
+    padding-bottom: 2rem;
+    margin-top: 10px;
+}
+
+/*
+.container {
+    z-index: 0;
+    margin-top: 0%;
+    background: #000000;
+    opacity: 0.90;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: white;
+}*/
+
