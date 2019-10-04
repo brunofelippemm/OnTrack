@@ -1,5 +1,5 @@
 # OnTrack Project
-![Dashboard Prototype](On_track/Images/dashboard_prototype.jpeg)
+![Dashboard Prototype](Images/dashboard_prototype.jpeg)
 
 <h2>Project Description:</h2>
 <p>A flask based full stack dashboard project for analyzing traffic incidents.</p>
