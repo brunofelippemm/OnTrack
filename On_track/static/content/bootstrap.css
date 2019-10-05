@@ -314,7 +314,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
+  color: aliceblue;
   background-color: #ffffff;
 }
 
@@ -335,7 +335,7 @@ textarea {
 }
 
 a {
-  color: #428bca;
+  color: darkblue;
   text-decoration: none;
 }
 
@@ -761,6 +761,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  background-color: maroon;
 }
 
 .container:before,
@@ -4502,7 +4503,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
+  background-color: #000000 !important;
   border-color: #080808;
 }
 
@@ -4937,7 +4938,7 @@ a.list-group-item.active > .badge,
     font-weight: 200;
     line-height: 2.1428571435;
     color: inherit;
-    background: #fff;
+    background: none;
     text-align: center;
 }
 
