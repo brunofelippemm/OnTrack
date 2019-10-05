@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="style/main.css" rel="stylesheet">
+    <title>%accidentes con lesionados</title>
+  </head>
+  <body>
+    <div id="chart">
+      <svg width="1000" height="370">
+        <g class="chart" transform="translate(20, 40)">
+          <text class="title" y="-9">% de accidentes con lesionados</text>
+          <g class="legend" transform="translate(870,-20)" >
+            <rect width="13" height="13" />
+            <text x="17" y="11">= 1 %</text>
+          </g>
+          <g class="y axis" />
+          <g class="bars" transform="translate(10, 0)"></g>
+        </g>
+      </svg>
+    </div>
+    <div id="menu">
+      <select class="mode">
+        <option value="top10">Top 10</option>
+        <option value="bottom10">Bottom 10</option>
+      </select>
+      <select class="year">
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2019" selected>2019</option>
+      </select>
+    </div>
+
+    <script src="lib/d3.min.js"></script>
+    <script src="lib/lodash.min.js"></script>
+    <script src="src/main.js"></script>
+  </body>
+</html>
