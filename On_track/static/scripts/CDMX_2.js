@@ -227,7 +227,7 @@ var myMap = L.map("map", {
     }
   };
   
-  var width = 260;
+  var width = 960;
   var height = 600;
   
   // console.log(url);
