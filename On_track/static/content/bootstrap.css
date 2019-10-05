@@ -335,7 +335,7 @@ textarea {
 }
 
 a {
-  color: darkblue;
+  color: coral;
   text-decoration: none;
 }
 
@@ -761,7 +761,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  background-color: maroon;
+  background-color: #000000;
 }
 
 .container:before,
@@ -4174,6 +4174,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   right: 0;
   left: 0;
   border-width: 0 0 1px;
+  color: #000000;
 }
 
 @media (min-width: 768px) {

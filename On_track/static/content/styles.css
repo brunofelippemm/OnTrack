@@ -34,7 +34,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 200vh;
     width: 100%;
     background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
 }
@@ -47,7 +47,7 @@ body {
 
 .header-overlay {
     height: 200vh;
-    width: 100%;
+    width: 210vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -86,10 +86,11 @@ body {
     margin-top: 10px;
 }
 
-.container {
+
+.container-styles {
     z-index: 0;
     margin-top: 0%;
-    background: #000000;
+    background: linear-gradient( #231557 0%, #44107A 29%);
     opacity: 0.90;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1rem;
