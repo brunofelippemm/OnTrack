@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="style/main.css" rel="stylesheet">
+    <title>% Accidentes con decesos por Delegación</title>
+  </head>
+  <body>
+      <div id="chart 2">
+      <svg id="svg" width="1200" height="350">
+        <g class="chart" transform="translate(5, 20)" bgcolor="#272727">
+          <text class="title" x="180" y="50"> Tasa de accidentes viales con personas fallecidas *  100m hab, según Alcaldía CDMX 2016-2019 </text>-->
+          <g class="legend" transform="translate(0,0)" >
+          <text x="360" y="330" font-size="9 px">  Incidentes viales reportados por C5, Fuente:Portal de Datos Abiertos CDMX disponible en https://datos.cdmx.gob.mx </text>-->
+          <text x="180" y="70"> Cada cuadro representa 1 deceso </text>
+          </g>
+          <g class="y axis"></g>
+          <g class="bars" transform="translate(10, 0)"></g>
+        </g>
+      </svg>
+    </div>
+    <div id="menu">
+      <select class="mode">
+        <option value="top10">Top 10</option>
+        <option value="bottom10">Bottom 10</option>
+      </select>
+      <select class="year">
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2019" selected>2019</option>
+      </select>
+    </div>  
+
+    <script src="lib/d3.min.js"></script>
+    <script src="lib/lodash.min.js"></script>
+    <script src="src/main2.js"></script>
+  </body>
+</html>
