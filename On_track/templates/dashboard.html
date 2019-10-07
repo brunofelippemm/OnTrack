@@ -11,15 +11,16 @@ integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFa
 crossorigin=""></script>
 
 <!-- d3 JS -->
-<script src="https://d3js.org/d3.v4.min.js"></script>
+<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 <script type="text/javascript" src="static/scripts/choropleth.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script> -->
 <!-- Marker Cluster JS & CSS -->
 <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
 
 <!-- Our CSS -->
-<link rel="stylesheet" type="text/css" href="static/css/style.css">
+<link rel="stylesheet" type="text/css" href="static/content/styles.css"> <!-- Bajar de github-->
 
 <select id="delegacion">
     <option value="CUAJIMALPA">CUAJIMALPA</option>
@@ -58,12 +59,19 @@ crossorigin="anonymous"></script>
 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 crossorigin="anonymous"></script>
 
-<div class="row ">
-    <button id="Grupo">Grupo</button>
-    <button id="Combinar">Combinar</button>
+<div class="row">
+    <button type="button" class="btn btn-primary btn-md" id="Combinar">Combinar</button>
+    <button type="button" class="btn btn-primary btn-md" id="Grupo">Grupo</button>
+    <br>
     <div id="grafico"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
-    <script src="bubble2.js"></script>
+    <script src="/static/scripts/bubble2.js"></script>
+</div>
+<div class="row">
+    <div id="map2"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+    <script src=",mapa.js"></script>
 </div>
 {% endblock %}

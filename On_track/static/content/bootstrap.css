@@ -1755,6 +1755,7 @@ textarea.form-control {
 
 .form-group {
   margin-bottom: 15px;
+  padding: 0px 35px;
 }
 
 .radio,
@@ -4931,7 +4932,7 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
-    height: 100%;
+    height: 77vh;
     width: 100%;
     padding: 30px;
     margin-bottom: 30px;
@@ -6819,4 +6820,10 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+}
+
+.vertical-center{
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
 }
