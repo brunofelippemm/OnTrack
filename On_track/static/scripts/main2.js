@@ -17,7 +17,9 @@ function initializeData() {
         return {
             name: d.delegacion,
             year: +d.ano,
-            lesionados: +d.lesionados
+            lesionados: +d.lesionados,
+            decesos: +d.decesos,
+
         }
     });
 }
@@ -27,7 +29,7 @@ function updateFilteredData() {
         return d.year === selectedYear;
     });
     filteredData = _.sortBy(filteredData, function(d) {
-        return selectedMode === "top10" ? -d.lesionados : d.lesionados;
+        return selectedMode === "top10" ? -d.decesos : d.decesos;
     });
     filteredData = filteredData.slice(0, numVisibleDel);
 }
@@ -47,7 +49,7 @@ function getTiles(num) {
 }
 
 function updateBar(d, i) {
-    var tiles = getTiles(d.lesionados);
+    var tiles = getTiles(d.decesos);
 
     var u = d3.select(this)
         .attr("transform", "translate(" + i * barWidth + ", 300)")
@@ -99,7 +101,7 @@ function updateLabel(d) {
             .style("fill", "#272727");
     }
 
-    el.text(d.name + "      " + d.lesionados);
+    el.text(d.name + "      " + d.decesos);
 }
 
 function updateBars() {
