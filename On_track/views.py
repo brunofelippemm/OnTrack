@@ -17,12 +17,12 @@ def home():
         year=datetime.now().year,
     )
 
-@app.route('/painel')
-def painel():
-    """Renders the painel page."""
+@app.route('/panel')
+def panel():
+    """Renders the panel page."""
     return render_template(
         'dashboard.html',
-        title='Painel',
+        title='Panel',
         year=datetime.now().year,
     )
 

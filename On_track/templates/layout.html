@@ -5,11 +5,15 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - My Flask Application</title>
+    <title>{{ title }} - On Track</title>
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/styles.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
@@ -25,7 +29,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('painel') }}">Painel</a></li>
+                    <li><a href="{{ url_for('panel') }}">Panel</a></li>
                     <li><a href="{{ url_for('about') }}">Acerca del Proyecto</a></li>
                     <li><a href="{{ url_for('contact') }}">Reportar Incidente</a></li>
                 </ul>
@@ -33,7 +37,7 @@
         </div>
     </div>
 
-    <div class="container body-content">
+    <div> <!--class="container">-->   <!--body-content-->
         {% block content %}{% endblock %}
         <hr />
         <footer>

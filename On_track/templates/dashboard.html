@@ -1,29 +1,165 @@
 ﻿{% extends "layout.html" %}
 
 {% block content %}
-<!-- Leaflet JS & CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-      integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-      crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+<div>
+    <!-- Leaflet JS & CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
         integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
         crossorigin=""></script>
 
-<!-- d3 JS -->
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script type="text/javascript" src="static/scripts/choropleth.js"></script>
-<!-- Marker Cluster JS & CSS -->
-<script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+    <!-- d3 JS -->
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="static/scripts/choropleth.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script> -->
+    <!-- Marker Cluster JS & CSS -->
+    <script type="text/javascript"
+        src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
 
-<!-- Our CSS -->
-<link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/content/styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+
+    <select id="delegacion">
+        <option value="CUAJIMALPA">CUAJIMALPA</option>
+        <option value="ALVARO OBREGON">ALVARO OBREGON</option>
+        <option value="IZTAPALAPA">IZTAPALAPA</option>
+        <option value="CUAUHTEMOC">CUAUHTEMOC</option>
+        <option value="MIGUEL HIDALGO">MIGUEL HIDALGO</option>
+        <option value="COYOACAN">COYOACAN</option>
+        <option value="AZCAPOTZALCO">AZCAPOTZALCO</option>
+        <option value="VENUSTIANO CARRANZA">VENUSTIANO CARRANZA</option>
+        <option value="TLALPAN">TLALPAN</option>
+        <option value="MILPA ALTA">MILPA ALTA</option>
+        <option value="MAGDALENA CONTRERAS">MAGDALENA CONTRERAS</option>
+        <option value="TLAHUAC">TLAHUAC</option>
+        <option value="XOCHIMILCO">XOCHIMILCO</option>
+        <option value="BENITO JUAREZ">BENITO JUAREZ</option>
+        <option value="GUSTAVO A. MADERO">GUSTAVO A. MADERO</option>
+        <option value="IZTACALCO">IZTACALCO</option>
+    </select>
+    <button onclick=delegacion(document.getElementById("delegacion").value)>Search</button>
+</div>
 
 <div id="map"></div>
 <script type="text/javascript" src="static/scripts/data_alcaldias.json"></script>
-<script type="text/javascript" src="static/scripts/data_colonias.json"></script>
+<!-- <script type="text/javascript" src="static/scripts/data_colonias.json"></script> -->
 <script type="text/javascript" src="static/scripts/config.js"></script>
-<script type="text/javascript" src="static/scripts/logic_clusters2.js"></script>
+<script type="text/javascript" src="static/scripts/CDMX_2.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<br>
+<div class="row">
+    <button type="button" class="btn btn-dark" id="Combinar">Agrupar</button>
+    <button type="button" class="btn btn-dark" id="Grupo">Categorizar</button>
+    <br>
+    <br>
+    <div id="grafico"></div>
+    <script src="/static/scripts/bindexnac.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+</div>
+<div class="row">
+    <button type="button" class="btn btn-dark" id="Combinar2">Agrupar</button>
+    <button type="button" class="btn btn-dark" id="Grupo2">Categorizar</button>
+    <br>
+    <div id="grafico2"></div>
+    <div id="grafico3"></div>
+    <script src="/static/scripts/lesionesnac.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+</div>
+<div class="row">
+    <button type="button" class="btn btn-dark" id="Combinar3">Agrupar</button>
+    <button type="button" class="btn btn-dark" id="Grupo3">Categorizar</button>
+    <br>
+    <div id="grafico4"></div>
+    <div id="grafico5"></div>
+    <script src="/static/scripts/decesos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+</div>
+<div class="row">
+    <div id="chart 2">
+        <svg id="svg" width="1200" height="350">
+            <g class="chart" transform="translate(5, 20)" bgcolor="#272727">
+                <text class="title" x="180" y="50"> Tasa de accidentes viales con personas fallecidas * 100m hab, según
+                    Alcaldía CDMX 2016-2019 </text>-->
+                <g class="legend" transform="translate(0,0)">
+                    <text x="360" y="330" font-size="9 px"> Incidentes viales reportados por C5, Fuente:Portal de Datos
+                        Abiertos CDMX disponible en https://datos.cdmx.gob.mx </text>-->
+                    <text x="180" y="70"> Cada cuadro representa 1 deceso </text>
+                </g>
+                <g class="y axis"></g>
+                <g class="bars" transform="translate(10, 0)"></g>
+            </g>
+        </svg>
+    </div>
+    <div id="menu">
+        <select class="mode">
+            <option value="top10">Top 10</option>
+            <option value="bottom10">Bottom 10</option>
+        </select>
+        <select class="year">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2019" selected>2019</option>
+        </select>
+    </div>
+
+    <script src="/static/scripts/d3.min.js"></script>
+    <script src="/static/scripts/lodash.min.js"></script>
+    <script src="/static/scripts/main2.js"></script>
+</div>
+<div class="row">
+    <div id="chart">
+        <svg id="svg" width="1200" height="350">
+            <g class="chart" transform="translate(5, 20)" bgcolor="#272727">
+                <text class="title" x="180" y="50"> Tasa de accidentes viales con personas lesionadas * 100m hab, según
+                    Alcaldía CDMX 2016-2019 </text>-->
+                <g class="legend" transform="translate(0,0)">
+                    <text x="360" y="330" font-size="9 px"> Incidentes viales reportados por C5, Fuente:Portal de Datos
+                        Abiertos CDMX disponible en https://datos.cdmx.gob.mx </text>-->
+                    <text x="180" y="70"> Cada cuadro representa 1 lesionado </text>
+                </g>
+                <g class="y axis"></g>
+                <g class="bars" transform="translate(10, 0)"></g>
+            </g>
+        </svg>
+    </div>
+    <div id="menu">
+        <select class="mode">
+            <option value="top10">Top 10</option>
+            <option value="bottom10">Bottom 10</option>
+        </select>
+        <select class="year">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2019" selected>2019</option>
+        </select>
+    </div>
+    <script src="/static/scripts/d3.min.js"></script>
+    <script src="/static/scripts/lodash.min.js"></script>
+    <script src="/static/scripts/main2.js"></script>
+</div>
 
 {% endblock %}
