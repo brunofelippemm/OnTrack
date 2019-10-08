@@ -1,0 +1,49 @@
+body {
+    font-family: Arial;
+}
+
+#menu {
+    margin-left: 20px;
+}
+
+select {
+    width: 200px;
+    padding: 3px;
+    margin-right: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.legend {
+    font-size: 14px;
+    fill: #FFFFFF;
+}
+
+.legend rect {
+    fill: #aaa;
+}
+
+.title {
+    font-weight: bold;
+    fill: #FFFFFF;
+}
+
+.axis line {
+    stroke: #eee;
+}
+
+.y.axis path {
+    display: none;
+}
+
+.y.axis text {
+    font-size: 14;
+    fill: #777;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#svg{
+  fill: #777;
+}
