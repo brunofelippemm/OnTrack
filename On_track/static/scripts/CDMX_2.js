@@ -182,9 +182,9 @@ function delegacion(nombre) {
 }
 
 d3.json(alcaldiaUrl, function (data) {
-  console.log(data)
+  // console.log(data)
   for (var i = 0; i < data.length; i++) {
-    console.log(data)
+    // console.log(data)
   }
 })
 
@@ -303,7 +303,7 @@ function choose(a) {
 
 d3.json(data_alcaldias, function (error, json) {
   if (error) console.error(error);
-  console.log(data_alcaldias);
+  // console.log(data_alcaldias);
 
   L.geoJSON(data_alcaldias, {
     style: function (feature) {
@@ -377,10 +377,6 @@ d3.json(data_alcaldias, function (error, json) {
   }).addTo(myMap);
 
 });
-    center: [19.369885, -99.127150],
-    zoom: 10
-  });
-  
   
   // Add a tile layer
   L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -560,9 +556,9 @@ d3.json(data_alcaldias, function (error, json) {
   }
   
   d3.json(alcaldiaUrl, function (data) {
-    console.log(data)
+    // console.log(data)
     for (var i = 0; i < data.length; i++) {
-      console.log(data)
+      // console.log(data)
     }
   })
   
@@ -681,7 +677,7 @@ d3.json(data_alcaldias, function (error, json) {
   
   d3.json(data_alcaldias, function (error, json) {
     if (error) console.error(error);
-    console.log(data_alcaldias);
+    // console.log(data_alcaldias);
   
     L.geoJSON(data_alcaldias, {
       style: function (feature) {
