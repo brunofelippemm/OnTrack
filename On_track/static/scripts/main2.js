@@ -13,7 +13,7 @@ var selectedYear = 2019,
     selectedMode = "top10";
 
 function initializeData() {
-    data = data.map(function(d) {
+    data = data.map(function (d) {
         return {
             name: d.delegacion,
             year: +d.ano,
@@ -25,10 +25,10 @@ function initializeData() {
 }
 
 function updateFilteredData() {
-    filteredData = data.filter(function(d) {
+    filteredData = data.filter(function (d) {
         return d.year === selectedYear;
     });
-    filteredData = _.sortBy(filteredData, function(d) {
+    filteredData = _.sortBy(filteredData, function (d) {
         return selectedMode === "top10" ? -d.decesos : d.decesos;
     });
     filteredData = filteredData.slice(0, numVisibleDel);
@@ -63,27 +63,27 @@ function updateBar(d, i) {
         .style("stroke-width", "0.5")
         .style("shape-rendering", "crispEdges")
         .merge(u)
-        .attr("x", function(d) {
+        .attr("x", function (d) {
             return d.x;
         })
-        .attr("y", function(d) {
+        .attr("y", function (d) {
             return d.y;
         })
         .attr("width", tileSize)
         .attr("height", tileSize)
         .transition()
-        .delay(function(d, i) {
+        .delay(function (d, i) {
             return i * 20;
         })
         .style("opacity", 1);
 
     u.exit()
         .transition()
-        .delay(function(d, i) {
+        .delay(function (d, i) {
             return (100 - i) * 20;
         })
         .style("opacity", 0)
-        .on("end", function() {
+        .on("end", function () {
             d3.select(this).remove();
         });
 }
@@ -112,7 +112,7 @@ function updateBars() {
     u.enter()
         .append("g")
         .merge(u)
-        .style("fill", function(d, i) {
+        .style("fill", function (d, i) {
             return colors[i % colors.length];
         })
         .each(updateBar)
@@ -136,13 +136,13 @@ function initialize() {
     initializeData();
 
     d3.select("select.mode")
-        .on("change", function() {
+        .on("change", function () {
             selectedMode = this.value;
             update();
         })
 
     d3.select("select.year")
-        .on("change", function() {
+        .on("change", function () {
             selectedYear = +this.value;
             update();
         });
@@ -153,7 +153,7 @@ function update() {
     updateBars();
     //   updateAxis();
 }
-d3.csv("/static/scripts/vflesionados.csv", function(error, csv) {
+d3.csv("/static/scripts/vflesionados.csv", function (error, csv) {
     data = csv
     if (error) return console.warn(error)
     console.log(data);
