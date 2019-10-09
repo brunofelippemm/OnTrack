@@ -54,7 +54,7 @@ var legend = d3.select('svg')
     .attr('transform', function (d, i) {
         var height = 20;
         var x = 30;
-        var y = 10 + i * height;
+        var y = 100 + i * height;
         return 'translate(' + x + ',' + y + ')';
     });
 legend.append('circle')
