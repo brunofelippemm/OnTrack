@@ -22,7 +22,7 @@ def panel():
 
 
 @app.route("/graphs")
-def graphics():
+def graphs():
     """Renders the panel page."""
     return render_template("graphs.html", title="Panel")
 
