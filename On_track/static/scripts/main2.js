@@ -98,7 +98,7 @@ function updateLabel(d) {
             .attr("y", -4)
             .attr("transform", "rotate(-90)")
             .style("font-size", "14px")
-            .style("fill", "#272727");
+            .style("fill", "#white");
     }
 
     el.text(d.name + "      " + d.decesos);
