@@ -1,101 +1,93 @@
-/* Style the video: 100% width and height to cover the entire window */
-
-* {
-    box-sizing: border-box;
-}
 
 body {
-    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+​
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+​
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+​
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+​
+.field-validation-valid {
+    display: none;
+}
+​
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+​
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+​
+.validation-summary-errors {
+    color: #b94a48;
+}
+​
+.validation-summary-valid {
+    display: none;
+}
+​
+#menu {
+    margin-left: 20px;
+}
+​
+select {
+    width: 200px;
+    padding: 3px;
+    margin-right: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+​
+.legend {
+    font-size: 14px;
+    fill: #FFFFFF;
+}
+​
+.legend rect {
+    fill: #aaa;
+}
+​
+.title {
+    font-weight: bold;
+    fill: #FFFFFF;
+}
+​
+.axis line {
+    stroke: #eee;
+}
+​
+.y.axis path {
+    display: none;
+}
+​
+.y.axis text {
+    font-size: 14;
+    fill: #777;
+    font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: aliceblue;
-    overflow-x: hidden;
-    background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
-    padding: 50px;
+}
+​
+#svg{
+  fill: #777;
 }
 
-.video-header {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    color: aliceblue;
-    background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+#map {
+    height: 100%;
 }
-
-.wrap {
-    max-width: 960px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin: auto;
-    text-align: center;
-}
-
-.fullscreen-video-wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 200vh;
-    width: 100%;
-    background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
-}
-
-    .fullscreen-video-wrap video {
-        min-height: 100%;
-        min-width: 100%;
-        background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
-    }
-
-.header-overlay {
-    height: 200vh;
-    width: 210vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
-    opacity: 0.50;
-}
-
-.header-content {
-    z-index: 2;
-    margin-top: 20%;
-    padding: 0 5rem;
-}
-
-    .header-content h1 {
-        margin-top: 0;
-        font-weight: 100;
-        font-size: 10vw;
-        font-variation-settings: 'wght' 100, 'wdth' 85;
-        animation: breathe 4000ms infinite forwards;
-    }
-
-@keyframes breathe {
-    60% {
-        font-variation-settings: 'wght' 700, 'wdth' 100;
-    }
-
-    100% {
-        font-variation-settings: 'wght' 100, 'wdth' 85;
-    }
-}
-
-.header-content h3 {
-    font-size: 1.5 rem;
-    display: block;
-    padding-bottom: 2rem;
-    margin-top: 10px;
-}
-
-
-.container-styles {
-    z-index: 0;
-    margin-top: 0%;
-    background: linear-gradient( #231557 0%, #44107A 29%);
-    opacity: 0.90;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: white;
-}
-

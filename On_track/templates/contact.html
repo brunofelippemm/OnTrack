@@ -1,96 +1,109 @@
-{% extends "layout.html" %}
+{% extends "layout2.html" %}
 
 {% block content %}
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
 <div class="video-header wrap">
     <div class="fullscreen-video-wrap">
-        <video src=http://mrm.mx/recursos/videos/mrm_back.mp4 " playsinline="playsinline " autoplay="autoplay " muted="muted " loop="loop "
-            type="video/mp4 "> </video>
+        <video src=http://mrm.mx/recursos/videos/mrm_back.mp4 " playsinline=" playsinline " autoplay="
+            autoplay " muted=" muted " loop=" loop "
+            type=" video/mp4 "> </video>
     </div>
-    <div class="header-overlay ">
-        <div class="header-content ">
+    <div class=" header-overlay ">
+        <div class=" header-content ">
             <h1 data-splitting>¡Ayúdanos a mejorar la ciudad!</h1>
             <h3>Reporta incidencias</h3>
         </div>
     </div>
 </div>
-<div class="container-styles">
-    <div class="row ">
-        <div class="col-sm-6 ">
-            <label>Nombre</label>
-            <input type="text " class="form-control ">
-        </div>
-        <div class="col-sm-4 ">
-            <label >Tipo de incidencia</label>
-            <select class="form-control ">
-                <option value="0 ">Selecciona una opcion</option>   
-                <option>Choque</option>
-                <option>Atropellamiento</option>
-                <option>Volcadura</option>
-                <option>Invación de ciclovía</option>
-            </select>
-            <input type="text " class="form-control ">
-        </div>
-    </div>
-    <div class="row ">
-        <div class="col-sm-12 ">
-            <label>Comentarios sobre el reporte</label>
-            <textarea class="form-control " rows="5 " id="comment "></textarea>
-            <br>
-            <br>
-        </div>
-        <div class="checkbox ">
-          <label>Selecciona el tipo de lesionado </label>
-            <label class="checkbox-inline "><input type="checkbox " value="0 "> Ciclista</label>
-            <label class="checkbox-inline "><input type="checkbox " value="1 "> Peatón</label>
-            <label class="checkbox-inline "><input type="checkbox " value="2 "> Conductor o pasajero</label>
-        </div>
-        <div class="form-group ">
-            <label for="sel1 ">No. total de lesionados:</label>
-            <select class="form-control " id="sel1 ">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-          </div>
-         <div class="col-sm-3 ">
-            <div class="row ">
-                <div class="col-sm-6 ">
-                    <form class="md-form ">
-                        <div class="file-field big ">
-                          <a class="btn-floating btn-lg amber darken-2 mt-0 float-left ">
-                            <i class="fas fa-cloud-upload-alt " aria-hidden="true "></i>
-                            <input type="file " multiple>
-                          </a>
-                          <div class="file-path-wrapper ">
-                            <input class="file-path validate " type="text " placeholder="Upload one or more files ">
-                          </div>
+<div class=" container-styles">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Nombre</label>
+                    <input type="text " class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <label>Tipo de incidencia</label>
+                    <select class="form-control">
+                        <option value="0 ">Selecciona una opcion</option>
+                        <option>Choque</option>
+                        <option>Atropellamiento</option>
+                        <option>Volcadura</option>
+                        <option>Invación de ciclovía</option>
+                    </select>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label>Comentarios sobre el reporte</label>
+                    <textarea class="form-control" rows="5 " id="comment "></textarea>
+                    <br>
+                    <br>
+                </div>
+                <div class="checkbox">
+                    <label>Selecciona el tipo de lesionado </label>
+                    <label class="checkbox-inline "><input type="checkbox " value="0 "> Ciclista</label>
+                    <label class="checkbox-inline "><input type="checkbox " value="1 "> Peatón</label>
+                    <label class="checkbox-inline "><input type="checkbox " value="2 "> Conductor o pasajero</label>
+                </div>
+                <div class="form-group">
+                    <label for="sel1 ">No. total de lesionados:</label>
+                    <select class="form-control " id="sel1 ">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <form class="md-form ">
+                                <div class="file-field big ">
+                                    <a class="btn-floating btn-lg amber darken-2 mt-0 float-left ">
+                                        <i class="fas fa-cloud-upload-alt " aria-hidden="true "></i>
+                                        <input type="file " multiple>
+                                    </a>
+                                    <div class="file-path-wrapper ">
+                                        <input class="file-path validate " type="text "
+                                            placeholder="Upload one or more files ">
+                                    </div>
+                                </div>
+                            </form>
+                            <form action="/upload" method="POST " enctype="multipart/form-data ">
+                                <label>Sube una fotografía</label>
+                                <input type="file " name="archivo " class="form-control ">
+                                <p> </p>
+                                <input type="submit " class="form-control ">
+                                <p> </p>
+                            </form>
                         </div>
-                      </form>
-                    <form action="/upload " method="POST " enctype="multipart/form-data ">
-                      <label>Sube una fotografía</label>
-                        <input type="file " name="archivo " class="form-control ">
-                        <p> </p>
-                        <input type="submit " class="form-control ">
-                        <p> </p>
-                    </form>
+                    </div>
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <button class="btn btn-success ">Enviar reporte<span
+                                    class="glyphicon glyphicon-floppy-disk "></span></button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row ">
-                <div class="col-sm-6 ">
-                    <button class="btn btn-success ">Enviar reporte<span class="glyphicon glyphicon-floppy-disk "></span></button>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
 
-{% endblock %}
+    {% endblock %}

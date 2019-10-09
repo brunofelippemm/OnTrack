@@ -8,48 +8,51 @@ from os import environ
 
 app = Flask(__name__)
 
-@app.route('/')
+
+@app.route("/")
 def home():
     """Renders the home page."""
-    return render_template(
-        'index.html',
-        title='Home Page',
-        year=datetime.now().year,
-    )
+    return render_template("index.html", title="Home Page", year=datetime.now().year)
 
-@app.route('/panel')
+
+@app.route("/panel")
 def panel():
     """Renders the panel page."""
-    return render_template(
-        'dashboard.html',
-        title='Panel',
-        year=datetime.now().year,
-    )
+    return render_template("dashboard.html", title="Panel")
 
-@app.route('/contact')
+
+@app.route("/graphs")
+def graphics():
+    """Renders the panel page."""
+    return render_template("graphs.html", title="Panel")
+
+
+@app.route("/contact")
 def contact():
     """Renders the contact page."""
     return render_template(
-        'contact.html',
-        title='Reportar Incidente',
+        "contact.html",
+        title="Reportar Incidente",
         year=datetime.now().year,
-        message='worked.'
+        message="worked.",
     )
 
-@app.route('/about')
+
+@app.route("/about")
 def about():
     """Renders the about page."""
     return render_template(
         "about.html",
         title="Acerca del Proyecto",
         year=datetime.now().year,
-        message="Your application description page."
+        message="Your application description page.",
     )
 
-if __name__ == '__main__':
-    HOST = environ.get('SERVER_HOST', 'localhost')
+
+if __name__ == "__main__":
+    HOST = environ.get("SERVER_HOST", "localhost")
     try:
-        PORT = int(environ.get('SERVER_PORT', '5555'))
+        PORT = int(environ.get("SERVER_PORT", "5555"))
     except ValueError:
         PORT = 5555
     app.run(HOST, PORT, debug=True)
