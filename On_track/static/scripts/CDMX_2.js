@@ -93,7 +93,7 @@ function inci(i) {
 }
 
 function urlFunc() {
-  var url = furl(500)//, year(2018));
+  var url = furl(5000)//, year(2018));
   return url
 }
 
@@ -105,14 +105,17 @@ function year(y) {
   return refine("ano")(y)
 }
 
-
+function reset(r) {
+  var r = markers.clearLayers();
+  return r
+}
+var markers = L.markerClusterGroup({ spiderfyOnMaxZoom: true, showCoverageOnHover: false, zoomToBoundsOnClick: true });
 
 function delegacion(nombre) {
   // Grab the data with d3
   d3.json(urlFunc(), function (response) {
     delegacionList = []
     // Create a new marker cluster group
-    var markers = L.markerClusterGroup({ spiderfyOnMaxZoom: true, showCoverageOnHover: false, zoomToBoundsOnClick: true });
     // Loop through data
     for (var i = 0; i < response.records.length; i++) {
 
@@ -337,7 +340,7 @@ d3.json(data_alcaldias, function (error, json) {
         }
       });
       // Giving each feature a pop-up with information pertinent to it
-      layer.bindPopup("<h5>" + feature.properties.nomgeo + "</h5> <hr> <h6>" + feature.properties.cvegeo + "</h6>");
+      layer.bindPopup("<h6>" + feature.properties.nomgeo + "</h6> <hr>");
 
     }
   }).addTo(myMap);
