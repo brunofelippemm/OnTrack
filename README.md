@@ -6,10 +6,11 @@
 
 <h2>C5ers Team Members:</h2>
 <ul>
+  <li>Jose Amieva.</li>
   <li>Bruno Miranda;</li>
   <li>Gonzalo Cienfuegos;</li>
   <li>Jesica Tapia Reyes;</li>
-  <li>Jose Amieva.</li>
+
 </ul>
 
 <h2>Main Objective:</h2>
