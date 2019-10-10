@@ -2,18 +2,19 @@
 ![Dashboard Prototype](Images/dashboard_prototype.jpeg)
 
 <h2>Project Description:</h2>
-<p>A flask based full stack dashboard project for analyzing traffic incidents.</p>
+<p>A flask based full stack dashboard project for analyzing incidents in CDMX</p>
 
 <h2>C5ers Team Members:</h2>
 <ul>
+  <li>Jose Amieva.</li>
   <li>Bruno Miranda;</li>
   <li>Gonzalo Cienfuegos;</li>
-  <li>Jesica Tapia Reyes;</li>
-  <li>Jose Amieva.</li>
+  <li>Jessica Tapia Reyes;</li>
+
 </ul>
 
 <h2>Main Objective:</h2>
-<p>Construct a Visual Performance dashboard with CDMX C5 data that provides meaningful insights about the city situation.</p>
+<p>Construct a Visual Performance dashboard with CDMX C5 data that provides meaningful insights about the situation in CDMX.</p>
 
 <h2>Story:</h2>
 <p>Current display of C5’s data is not actionable not for the authorities nor the citizens. In order to have a breakthrough on this, our project enables both parties to use the data on a meaningful way.
