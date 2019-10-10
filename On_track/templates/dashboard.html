@@ -1,6 +1,7 @@
 ﻿{% extends "layout.html" %}
 
 {% block content %}
+<br>
 <div>
     <!-- Leaflet JS & CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
@@ -26,26 +27,52 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <div style="background-color: black">
+        <center>
+            <select id="ano">
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+            </select>
+            <button onclick=delegacion(document.getElementById("ano").value)>Search</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="incidente">
+                <option value="accidente-choque sin lesionados" img src="static/content/car-collision.png">Choque sin
+                    Lesiones</option>
+                <option value="accidente-choque con lesionados" img src="static/content/car-collision.png">Choque con
+                    Lesiones</option>
+                <option value="lesionado-atropellado" img src="static/content/atropellado.png">Atropellado</option>
+                <option value="accidente-motociclista" img src="static/content/motor.png">Motociclista</option>
+                <option value="accidente-volcadura" img src="static/content/volado.png">Volcadura</option>
 
-    <select id="delegacion">
-        <option value="CUAJIMALPA">CUAJIMALPA</option>
-        <option value="ALVARO OBREGON">ALVARO OBREGON</option>
-        <option value="IZTAPALAPA">IZTAPALAPA</option>
-        <option value="CUAUHTEMOC">CUAUHTEMOC</option>
-        <option value="MIGUEL HIDALGO">MIGUEL HIDALGO</option>
-        <option value="COYOACAN">COYOACAN</option>
-        <option value="AZCAPOTZALCO">AZCAPOTZALCO</option>
-        <option value="VENUSTIANO CARRANZA">VENUSTIANO CARRANZA</option>
-        <option value="TLALPAN">TLALPAN</option>
-        <option value="MILPA ALTA">MILPA ALTA</option>
-        <option value="MAGDALENA CONTRERAS">MAGDALENA CONTRERAS</option>
-        <option value="TLAHUAC">TLAHUAC</option>
-        <option value="XOCHIMILCO">XOCHIMILCO</option>
-        <option value="BENITO JUAREZ">BENITO JUAREZ</option>
-        <option value="GUSTAVO A. MADERO">GUSTAVO A. MADERO</option>
-        <option value="IZTACALCO">IZTACALCO</option>
-    </select>
-    <button onclick=delegacion(document.getElementById("delegacion").value)>Search</button>
+
+
+            </select>
+            <button onclick=delegacion(document.getElementById("incidente").value)>Search</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <select id="delegacion">
+                <option value="CUAJIMALPA">CUAJIMALPA</option>
+                <option value="ALVARO OBREGON">ALVARO OBREGON</option>
+                <option value="IZTAPALAPA">IZTAPALAPA</option>
+                <option value="CUAUHTEMOC">CUAUHTEMOC</option>
+                <option value="MIGUEL HIDALGO">MIGUEL HIDALGO</option>
+                <option value="COYOACAN">COYOACAN</option>
+                <option value="AZCAPOTZALCO">AZCAPOTZALCO</option>
+                <option value="VENUSTIANO CARRANZA">VENUSTIANO CARRANZA</option>
+                <option value="TLALPAN">TLALPAN</option>
+                <option value="MILPA ALTA">MILPA ALTA</option>
+                <option value="MAGDALENA CONTRERAS">MAGDALENA CONTRERAS</option>
+                <option value="TLAHUAC">TLAHUAC</option>
+                <option value="XOCHIMILCO">XOCHIMILCO</option>
+                <option value="BENITO JUAREZ">BENITO JUAREZ</option>
+                <option value="GUSTAVO A. MADERO">GUSTAVO A. MADERO</option>
+                <option value="IZTACALCO">IZTACALCO</option>
+            </select>
+            <button onclick=delegacion(document.getElementById("delegacion").value)>Search</button>
+    </div>
+    </center>
 </div>
 
 <div id="map"></div>
