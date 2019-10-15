@@ -1,0 +1,118 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<body>
+    <div class="video-header wrap">
+  
+<div class="video-header-wrap" style="background-color:linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%)">
+    <div class="fullscreen-video-wrap" color="blue" >
+        <video top="50" width="1250" height="800" id=video, src=http://mrm.mx/recursos/videos/mrm_back.mp4 " playsinline=" playsinline " autoplay="
+            autoplay " muted=" muted " loop=" loop 
+            type=" video/mp4 "> </video>
+    </div>
+    <div class="header-overlay"  width="1000" height="200" background-color="linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%)";>
+        
+            <h1 data-splitting style="color:white;">¡Ayúdanos a mejorar la ciudad!</h1>
+            <h3 font style="color:white;">Reporta incidencias</h3>
+        </div>
+    </div>
+</div>
+<div class=" container-styles">
+ <form>
+  <div class="form-group">
+    <label for="FormControlInput1"style="color:white;">Nombre</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre Apellido">
+    <label for="FormControlInput1"style="color:white;">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1"style="color:white;">Selecciona el tipo de incidencia que reportas</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <optionstyle="color:white;">Selecciona una opcion</option>
+      <option>Choque</option>
+      <option>Atropellamiento</option>
+      <option>Invasión de ciclovía</option>
+      <option>Invasión de banqueta</option>
+       <option>Volcadura</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2"style="color:white;">No. lesionados</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Selecciona una opcion</option>
+      <option>Ninguno</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    <option>4</option>
+    <option>4</option>
+    </select>
+  <label for="exampleFormControlSelect1"style="color:white;">Tipo de lesionado</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Selecciona una opcion</option>
+      <option>Ciclista</option>
+      <option>Peatón</option>
+      <option>Conductor</option>
+      <option>Pasajero</option>
+   </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"style="color:white;">En este espacio puedes proporcionar más infromación</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+  </div>
+ 
+  <div class="row">
+ 
+    <div class="imagePreview"></div>
+<p style="color:white;"><b>Incluye una imagen o archivo a tu reporte<b> <p>
+<label class="btn btn-primary">Subir archivo <input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+				</label>
+<p style="color:white;"><b>Proporciona la ubicacion de la incidencia<b></p>
+
+<button type="button" class="btn btn-primary" onclick="getLocation()">Georreferenciar reporte</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+    
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+  </form>
+             </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    {% endblock %}
